@@ -12,9 +12,6 @@ precoInicial = smartPark.ValidaValor();
 Console.WriteLine("Digite o preço por hora: ");
 precoPorHora = smartPark.ValidaValor();
 
-// Console.WriteLine("Preço inicial: " + precoInicial);
-// Console.WriteLine("Preço por hora: " + precoPorHora);
-
 string escolha = "";
 bool menu = true;
 
@@ -35,14 +32,25 @@ while (menu)
         
         case "2":
             smartPark.RemoverVeiculo();
+            smartPark.CalcularValor(precoInicial, precoPorHora);
             break;
         
         case "3":
             smartPark.ListarVeiculos();
             break;
 
+        case "4":
+            menu = false;
+            break;
+
         default:
             Console.WriteLine("Opção inválida");
             break;
     }
+
+    Console.WriteLine("\nPressione ENTER para continuar.");
+    Console.ReadLine();
+
 }
+
+Console.WriteLine("\nAté a próxima!");
